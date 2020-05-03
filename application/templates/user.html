@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    <h1 style="text-align: center; color: coral;">Students</h1>
+    <h3 style="text-align: center;">Registered Students</h3>
+
+
+    <div style="text-align: center;">
+        {% for user in users %}
+        <dl>
+            <dt>User ID : {{ user.user_id }}</dt>
+            <dt>Email : {{ user.email }}</dt>
+            <dt>Full Name : {{ user.first_name }} {{ user.last_name }}</dt>
+            <dt>Password : {{ user.password }}</dt>
+        </dl>
+        {% else %}
+            <h3>No Users Yet!</h3>
+        {% endfor %}
+    </div>
+    
+{% endblock %}

@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    <h1 style="text-align: center;">Enrollment Status</h1>
+    
+    {% if not classes %}
+        <h2 style="text-align: center;">You are not enrolled in any class.</h2>
+    {% else %}
+    <h2 style="text-align: center; color: coral;">You are enrolled in:</h2>
+    <div class="container">
+        <table class="table table-sm">
+            <thead style="background-color: aquamarine;">
+            <tr>
+                <th scope="col">CourseID</th>
+                <th scope="col">Title</th>
+                <th scope="col">Description</th>
+                <th scope="col">Credits</th>
+                <th scope="col">Term</th>
+                <th scope="col">Enroll</th>
+            </tr>
+            </thead>
+            <tbody>
+
+                {% for class in classes %}
+                <tr>
+                    <th scope="row">{{ class["courseID"] }}</th>
+                    <td>{{ class["title"] }}</td>
+                    <td>{{ class["description"] }}</td>
+                    <td>{{ class["credits"] }}</td>
+                    <td>{{ class["term"] }}</td>
+                </tr>
+                {% endfor %}
+            
+            </tbody>
+        </table>
+    </div>
+    {% endif %}
+
+{% endblock %}
