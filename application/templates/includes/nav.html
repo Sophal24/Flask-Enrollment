@@ -7,11 +7,6 @@
         <a class="nav-link {% if courses %} active {% endif %}" href="{{ url_for('courses') }}">Classes</a>
       </li>
 
-      <!-- {% if not session['username'] %}
-      <li class="nav-item">
-        <a class="nav-link {% if register %} active {% endif %}" href="{{ url_for('register') }}">Register</a>
-      </li>
-      {% endif %} -->
 
       <li class="nav-item">
         <a class="nav-link {% if enrollment %} active {% endif %}" href="{{ url_for('enrollment') }}">Enrollment</a>
